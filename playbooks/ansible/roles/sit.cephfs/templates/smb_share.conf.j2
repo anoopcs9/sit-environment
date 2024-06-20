@@ -1,9 +1,9 @@
 [{{ name }}-{{ config.be.name }}-{{ config.be.variant }}]
 comment = Volume '{{ name }}' from {{ config.be.name }}({{ config.be.variant }})
 vfs objects = acl_xattr
-{%- if config.be.variant == 'vfs' %} ceph
-ceph:config_file = /etc/ceph/sit.ceph.conf
-ceph:user_id = sit
+{%- if config.be.variant == 'vfs' %} ceph_new
+ceph_new:config_file = /etc/ceph/sit.ceph.conf
+ceph_new:user_id = sit
 path = {{ subvol }}
 {%- else +%}
 path = {{ path }}
