@@ -25,3 +25,5 @@ samba_shares:
     samba:
       options:
         "acl_xattr:security_acl_name": "user.NTACL"
+        "aio write size": "0"
+        "aio read size": "0"
