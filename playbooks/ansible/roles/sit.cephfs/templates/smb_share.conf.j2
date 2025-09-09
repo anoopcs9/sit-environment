@@ -2,7 +2,7 @@
   {%- if method != 'kclient' or (volume.cephfs.options.casesensitive | default(false)) +%}
 [{{ volume.name }}-{{ config.be.name }}-{{ config.be.variant }}-{{ method }}]
 comment = Volume '{{ volume.name }}' from {{ config.be.name }}({{ config.be.variant }} {{ method }})
-vfs objects = acl_xattr ceph_snapshots
+vfs objects = acl_xattr aio_ratelimit ceph_snapshots
     {%- if method != 'kclient' %}
       {%- set vfs = 'ceph_new' %}
       {%- if method == 'vfs' %}
