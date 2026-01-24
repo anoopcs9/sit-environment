@@ -13,9 +13,9 @@
 
 - name: Create ceph repo
   yum_repository:
-    name: "ceph-{{ config.data.branch }}-{{ ceph_shaman.json[0].sha1 }}"
-    baseurl: "{{ ceph_shaman.json[0].url }}/x86_64"
-    description: "Ceph {{ config.data.branch }} ({{ ceph_shaman.json[0].sha1 }})"
+    name: "ceph-{{ config.data.branch }}-ad94b10d3fb42e8c87599cebf5d87aa390a31336"
+    baseurl: "https://2.chacra.ceph.com/r/ceph/wip-anoopcs9-cephfs-proxy-fscrypt-fsync/ad94b10d3fb42e8c87599cebf5d87aa390a31336/centos/9/flavors/default/x86_64"
+    description: "Ceph {{ config.data.branch }} (ad94b10d3fb42e8c87599cebf5d87aa390a31336)"
     enabled: true
     gpgcheck: false
     state: present

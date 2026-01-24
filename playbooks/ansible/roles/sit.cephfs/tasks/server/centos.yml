@@ -12,6 +12,6 @@
 
 - name: Download cephadm
   get_url:
-    url: "{{ ceph_shaman.json[0].url }}/noarch/cephadm"
+    url: "https://2.chacra.ceph.com/r/ceph/wip-anoopcs9-cephfs-proxy-fscrypt-fsync/ad94b10d3fb42e8c87599cebf5d87aa390a31336/centos/9/flavors/default/noarch/cephadm"
     dest: /root/cephadm
     mode: 0755
