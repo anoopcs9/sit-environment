@@ -11,7 +11,6 @@
     state: present
 
 - name: Download cephadm
-  get_url:
-    url: "{{ ceph_shaman.json[0].url }}/noarch/cephadm"
-    dest: /root/cephadm
-    mode: 0755
+  shell: >
+    curl -sL "{{ ceph_shaman[0].url }}/noarch/cephadm" -o /root/cephadm &&
+    chmod 0755 /root/cephadm
