@@ -1,5 +1,5 @@
 ---
-- name: Temporarily allow cap_dac_override for smbd from SELinux
+- name: Temporarily allow access on smbd_var_run_t for ctdbd from SELinux
   include_tasks: custom_selinux_policy.yml
   vars:
-    module_name: smbd_dac_override
+    module_name: ctdbd_smbd_pid
