@@ -1,0 +1,13 @@
+module ctdbd_smbd_pid 1.0;
+
+require {
+    type ctdbd_t;
+    type smbd_var_run_t;
+    class dir { create read write open getattr setattr search add_name remove_name rmdir };
+    class file { create read write open getattr setattr unlink lock rename };
+    class sock_file { create read write open getattr setattr unlink rename };
+}
+
+allow ctdbd_t smbd_var_run_t:dir { create read write open getattr setattr search add_name remove_name rmdir };
+allow ctdbd_t smbd_var_run_t:file { create read write open getattr setattr unlink lock rename };
+allow ctdbd_t smbd_var_run_t:sock_file { create read write open getattr setattr unlink rename };
