@@ -1,6 +1,6 @@
 [{{ vol_name }}-{{ config.be.name }}-{{ config.be.variant }}]
 comment = Volume '{{ vol_name }}' from {{ config.be.name }}({{ config.be.variant }})
-vfs objects = acl_xattr glusterfs
+vfs objects = fruit streams_xattr acl_xattr glusterfs
 glusterfs:volume = {{ vol_name }}
 glusterfs:logfile = /var/log/samba/{{ vol_name }}.%M.log
 glusterfs:loglevel = 7

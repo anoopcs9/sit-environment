@@ -1,7 +1,7 @@
 {%- for method in config.be.methods +%}
 [{{ volume.name }}-{{ config.be.name }}-{{ config.be.variant }}-{{ method }}]
 comment = Volume '{{ volume.name }}' from {{ config.be.name }}({{ config.be.variant }} {{ method }})
-vfs objects = acl_xattr {%- if method != 'kclient' %} gpfs{% endif +%}
+vfs objects = fruit streams_xattr acl_xattr {%- if method != 'kclient' %} gpfs{% endif +%}
 path = {{ path }}
 read only = no
   {%- for option, value in volume.samba.options.items() | default([]) +%}
